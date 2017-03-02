@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest"
+    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+    id="cordova-plugin-adnaga-adcolony"
+    version="0.1.0">
+
+    <name>adnaga-adcolony</name>
+    <description>adnaga adcolony plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,adnaga,ads,ad,adcolony</keywords>
+    <repo>https://github.com/adnaga/adnaga-adcolony</repo>
+    <issue>https://github.com/adnaga/adnaga-adcolony/issues</issue>
+
+    <js-module src="www/adnaga_adcolony.js" name="adnaga_adcolony">
+        <clobbers target="adnaga_adcolony" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.jirbo.adcolony.AdColonyOverlay"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+            <activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+            <activity android:name="com.jirbo.adcolony.AdColonyBrowser"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        </config-file>
+
+        <source-file src="src/android/adcolony.jar" target-dir="libs" framework="true" />
+        <source-file src="src/android/AdnagaAdcolony.java" target-dir="src/com/adnaga/"/>
+    </platform>
+</plugin>

@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-adnaga-adcolony",
+  "version": "0.1.0",
+  "description": "show adcolony ads in adnaga",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnaga/adnaga-adcolony.git"
+  },
+  "cordova": {
+    "id": "cordova-plugin-adnaga-adcolony",
+    "platforms": [
+      "android"
+    ]
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adnaga/adnaga-adcolony/issues"
+  },
+  "homepage": "https://github.com/adnaga/adnaga-adcolony#readme"
+}
