@@ -41,6 +41,16 @@ public class AdnagaAdcolony implements IPlugin {
         ad.show();
     }
 
+    public void onPause() {
+        AdColony.pause();
+        Log.i(LOG_TAG, "Called AdColony.pause()");
+    }
+
+    public void onResume() {
+        AdColony.resume(_adnaga.getActivity());
+        Log.i(LOG_TAG, "Called AdColony.resume(activity)");
+    }
+
     private class AdColonyListener implements AdColonyAdAvailabilityListener, AdColonyAdListener {
         @Override
         public void onAdColonyAdAvailabilityChange(boolean b, String s) {
@@ -49,8 +59,9 @@ public class AdnagaAdcolony implements IPlugin {
                 _adnaga.sendAdsEventToJs("adcolony", "READY", "");
             }
         }
+
         @Override
-        public void onAdColonyAdAttemptFinished( AdColonyAd ad )
+        public void onAdColonyAdAttemptFinished(AdColonyAd ad)
         {
             // Can use the ad object to determine information about the ad attempt:
             // ad.shown();
